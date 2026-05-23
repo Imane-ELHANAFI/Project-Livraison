@@ -36,11 +36,18 @@ void Agence::afficherHistoriqueColis() const {
         cout << *colis << endl;
     }
 }
-void Agence::genererRapport() {
-    cout << "Rapport de l'agence :" << endl;
-    for (const auto& colis : liste_colis) {
-        cout << *colis << endl;
-    }
+void Agence::genererRapport(Colis& colis , Transporteur * t) const {
+    float cout_ = t->computeCost(colis.getPoids(), colis.getDistance(), colis.getTypeString());
+    int delai_ = t->computeDelay();
+    cout << "Voici le rapport du colis :" << endl;
+    cout << "Recapitulatif" << endl;
+    cout << "Poids : " << colis.getPoids() << " kg" << endl;
+    cout << "Distance : " << colis.getDistance() << " km" << endl;
+    cout << "Transporteur : "<< t->getType() << endl;
+    cout << "Type colis : " << colis.getTypeString() << endl;
+    cout << "Urgent : " << (colis.isUrgent() ? "Oui" : "Non") << endl;
+    cout << "Coût estime : " << cout_ << " DH" << endl;
+    cout << "Delai estime : " << delai_ << " jours" << endl;
 }
 Transporteur* Agence::attribuerTransporteur(const Colis& colis) const {
     for (const auto& transporteur : transporteurs) {
