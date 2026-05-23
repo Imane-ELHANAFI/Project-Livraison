@@ -1,4 +1,6 @@
 #include "Drone.h"
+#include<string>
+using namespace std;
 
 Drone::Drone(bool urgent) : Transporteur("drone", urgent) {}
 
@@ -11,7 +13,7 @@ bool Drone::canDeliver(double poids, double distance, string type) const
 
 float Drone::computeCost(double poids, double distance, string type) const
 {
-    float cost = poids * 4.0f + distance * 1.2f;
+    float cost = (poids * 4.0f + distance * 1.2f)*10.0f;
     if (urgent)
         cost *= 2.0f;
     return cost;

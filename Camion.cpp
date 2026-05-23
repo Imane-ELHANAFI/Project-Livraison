@@ -1,4 +1,6 @@
 #include "Camion.h"
+#include<string>
+using namespace std;
 
 Camion::Camion(bool urgent) : Transporteur("camion", urgent) {}
 

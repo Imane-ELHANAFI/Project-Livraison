@@ -1,4 +1,6 @@
 #include "Velo.h"
+#include<string>
+using namespace std;
 
 Velo::Velo(bool urgent) : Transporteur("velo", urgent) {}
 
@@ -9,7 +11,7 @@ bool Velo::canDeliver(double poids, double distance, string type) const {
 }
 
 float Velo::computeCost(double poids, double distance, string type) const {
-    float cost = poids * 2.0f + distance * 0.5f;
+    float cost = (poids * 2.0f + distance * 0.5f)*10.0f;
     if (urgent) cost *= 1.5f;
     return cost;
 }
