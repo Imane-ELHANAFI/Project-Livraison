@@ -1,7 +1,9 @@
 #ifndef VELO_H
 #define VELO_H
 
+#include <string>
 #include "Transporteur.h"
+using namespace std;
 
 class Velo : public Transporteur {
 public:

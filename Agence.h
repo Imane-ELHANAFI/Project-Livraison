@@ -11,10 +11,10 @@ using namespace std;
 class Agence {
     private :
         vector<Transporteur*> transporteurs ;
-        vector<Colis*> liste_colis ;
         vector<Client_agence*> liste_clients ;
     public :
-        Agence() ;
+        vector<Colis*> liste_colis ;
+        Agence();
         void ajouterColis(Colis colis) ;
         void supprimerColis(Colis colis) ;
         void ajouterClient(Client_agence client) ;

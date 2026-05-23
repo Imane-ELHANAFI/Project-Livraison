@@ -1,13 +1,14 @@
 #include "Agence.h"
 #include <iostream>
+#include "colis.h"
 using namespace std;
 
 Agence::Agence() {
     // Initialisation des transporteurs disponibles
-    transporteurs.push_back(new Camion);
-    transporteurs.push_back(new Avion);
     transporteurs.push_back(new Velo);
     transporteurs.push_back(new Drone);
+    transporteurs.push_back(new Avion);
+    transporteurs.push_back(new Camion);
 }
 void Agence::ajouterColis(Colis colis) {
     liste_colis.push_back(new Colis(colis));

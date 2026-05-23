@@ -8,7 +8,7 @@ void Destinataire::affichage() {
 }
 bool Destinataire::confirmerLivraison(const string& statutColi) const {
     char reponse ;
-    if (statutColi == "Livré") {
+    if (statutColi == "LIVRE") {
         cout << "Avez-vous recu votre colis ? (o/n) : ";
         cin >> reponse ;
         if (reponse == 'o' || reponse == 'O') {
